@@ -5,6 +5,7 @@ public class Calculator {
     private final int MIN_PRECISION = 0;
     private final String ERROR_MESSAGE_PRECISION = "\"Invalid precision, by default set in 2\"";
     private int precision = 2;
+    public static int i = 1;
 
     public Calculator() {
     }

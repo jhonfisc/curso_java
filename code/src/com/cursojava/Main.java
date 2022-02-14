@@ -16,6 +16,10 @@ public class Main {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator(2);
+
+        int d = new Calculator().i;
+        d++;
+        System.out.println("*---------> " + d);
         int primerOperando;
         int segundoOperando;
         double primerOperandoDouble;

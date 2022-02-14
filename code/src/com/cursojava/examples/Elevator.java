@@ -1,4 +1,4 @@
-package com.cursojava;
+package com.cursojava.examples;
 
 public class Elevator {
     int callLevel;
