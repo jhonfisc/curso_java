@@ -4,9 +4,13 @@ curso java aula matriz
 
 # Proyecto: Match Simulator
 
-codigo fuente en: /curso_java/match/simulator
+Proyecto de ejemplo del curso java de Aula Matriz
 
-clase Main en: /src/com.soccermatchsimulator
+---
+
+codigo fuente en: curso_java/match_simulator
+
+clase Main en: /match_simulator/src/com.soccermatchsimulator
 
 
 sientase libre en subir los cambios que desee
