@@ -2,7 +2,6 @@ package com.soccermatchsimulator.core;
 
 public class SimulationEngine {
 
-
     private static final double MAX_NUMBER = 100;
     private static final int MINUTES = 5;
     private static final int MAX_MINUTES = 90;
@@ -11,6 +10,8 @@ public class SimulationEngine {
     private static final String DEFENSE = "Defense";
     private static final String ATTACK = "Attack";
     private static final String OTHER = "Other";
+    private static final String HOME_TEAM = "Home Team";
+    private static final String AWAY_TEAM = "Away Team";
 
     private boolean homeTeamPlay = true;
     private Match match;
@@ -65,8 +66,8 @@ public class SimulationEngine {
 
     private String getTeamLog() {
         if (homeTeamPlay) {
-            return "Home Team";
+            return HOME_TEAM;
         }
-        return "Away Team";
+        return AWAY_TEAM;
     }
 }
