@@ -7,6 +7,8 @@ public class Match {
     private int scoreAway;
     private Team teamHome;
     private Team teamAway;
+    private String matchLog = "";
+    private String currentLog = "";
 
     public Match(Team teamHome, Team teamAway) {
         this.teamHome = teamHome;
@@ -18,16 +20,33 @@ public class Match {
         setProbabilityBarAway();
     }
 
+    public Team getTeamHome() {
+        return teamHome;
+    }
+
+    public Team getTeamAway() {
+        return teamAway;
+    }
+
+    public void setMatchLog(String matchLog) {
+        this.matchLog = this.matchLog + matchLog;
+        this.currentLog = matchLog;
+    }
+
+    public String getMatchLog() {
+        return matchLog;
+    }
+
+    public void addGoal(boolean homeTeam) {
+        if(homeTeam) {
+            scoreHome += 1;
+        } else {
+            scoreAway += 1;
+        }
+    }
+
     public String getScore() {
         return scoreHome + " - " + scoreAway;
-    }
-
-    public void getGraphicProbabilityBarHome() {
-        teamHome.getGraphicProbabilityBar();
-    }
-
-    public void getGraphicProbabilityBarAway() {
-        teamAway.getGraphicProbabilityBar();
     }
 
     private void setProbabilityBarHome() {

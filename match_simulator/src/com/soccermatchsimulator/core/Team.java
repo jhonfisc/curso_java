@@ -8,6 +8,9 @@ public class Team {
     private static final int BAR_DEFENSE_INDEX = 0;
     private static final double PROBABILITY_DEFENSE = 5;
     private static final double PROBABILITY_ATTACK = 5;
+    private static final int POSITION_DEFENSE = 1;
+    private static final int POSITION_ATTACK = 2;
+    private static final int POSITION_OTHER = 3;
     private int[] formation = { 0, 0, 0 };
     private double[] probabilityBar = { 0, 0 };
     private double probabilityAttack;
@@ -33,12 +36,13 @@ public class Team {
         this.probabilityBar[BAR_ATTACK_INDEX] = this.probabilityBar[BAR_DEFENSE_INDEX] + this.probabilityAttack;
     }
 
-    public void getGraphicProbabilityBar() {
-        System.out.println("/************ Team " + teamName + " ******************/");
-        System.out.println(" - Probability Defense:  " + this.probabilityBar[BAR_DEFENSE_INDEX]);
-        System.out.println(" - Probability Attack:  " + this.probabilityBar[BAR_ATTACK_INDEX]);
-        System.out.println(" - Other Probability:  " + (100 - this.probabilityBar[BAR_DEFENSE_INDEX] - this.probabilityBar[BAR_ATTACK_INDEX]));
-        System.out.println("\n");
+    public int getTeamPosition(double roll) {
+        if( roll > this.probabilityBar[BAR_DEFENSE_INDEX] && roll <= this.probabilityBar[BAR_ATTACK_INDEX]) {
+            return POSITION_ATTACK;
+        } else if (roll < this.probabilityBar[BAR_DEFENSE_INDEX]) {
+            return POSITION_DEFENSE;
+        }
+        return POSITION_OTHER;
     }
 
     private void calculateInternalProbabilityAttack() {
