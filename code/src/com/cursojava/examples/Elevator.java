@@ -1,14 +1,19 @@
 package com.cursojava.examples;
 
 public class Elevator {
-    int callLevel;
-    int currentLevel;
+    public int callLevel;
+    public int currentLevel = 1;
     final int MAX_LEVEL;
     final int MIN_LEVEL;
-    boolean isOpenDoor;
-    boolean isCloseDoor = true;
+    public boolean isOpenDoor;
+    public boolean isCloseDoor = true;
     final String SUCCESS_MESSAGE = "Piso aceptado!";
     final String ERROR_MESSAGE = "Piso no aceptado!";
+
+    public Elevator() {
+        this.MAX_LEVEL = 10;
+        this.MIN_LEVEL = 1;
+    }
 
     public Elevator(int maxLevel, int minLevel) {
         this.MAX_LEVEL = maxLevel;
@@ -56,7 +61,7 @@ public class Elevator {
         }
     }
 
-    private boolean isMaxLevel() {
+    protected boolean isMaxLevel() {
         return !(currentLevel ==  MAX_LEVEL);
     }
 }
