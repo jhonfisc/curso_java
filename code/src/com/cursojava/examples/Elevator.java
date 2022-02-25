@@ -2,7 +2,7 @@ package com.cursojava.examples;
 
 public class Elevator {
     public int callLevel;
-    public int currentLevel = 1;
+    public int currentLevel;
     final int MAX_LEVEL;
     final int MIN_LEVEL;
     public boolean isOpenDoor;

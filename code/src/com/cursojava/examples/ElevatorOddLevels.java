@@ -11,6 +11,7 @@ public class ElevatorOddLevels extends Elevator {
 
     public ElevatorOddLevels(int maxLevel) {
         super(maxLevel, MIN_LEVEL);
+        this.currentLevel = MIN_LEVEL;
     }
 
     @Override

@@ -6,6 +6,7 @@ public class ElevatorPairLevels extends Elevator {
 
     public ElevatorPairLevels(int maxLevel) {
         super(maxLevel, MIN_LEVEL);
+        this.currentLevel = MIN_LEVEL;
     }
 
     @Override
