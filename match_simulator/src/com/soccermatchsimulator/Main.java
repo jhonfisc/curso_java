@@ -1,14 +1,17 @@
 package com.soccermatchsimulator;
 
-import com.soccermatchsimulator.core.Match;
-import com.soccermatchsimulator.core.SimulationEngine;
-import com.soccermatchsimulator.core.Team;
+import com.soccermatchsimulator.core.*;
+
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
-	    Team teamHome = new Team("Home",3,4,3);
-        Team teamAway = new Team("Away",2,4,4);
+        ArrayList<Player> players = new ArrayList();
+        initTeam(players);
+
+	    Teamv2 teamHome = new Teamv2("Home",3,4,3);
+        Teamv2 teamAway = new Teamv2("Away", players);
 
         Match match = new Match(teamHome, teamAway);
 
@@ -16,5 +19,20 @@ public class Main {
         simulationEngine.simulateMatch();
 
         System.out.println(match.getMatchLog());
+    }
+
+    private static void initTeam(ArrayList<Player> players) {
+        players.add(new Player(Constants.DEFENSES, "Player1"));
+        players.add(new Player(Constants.DEFENSES, "Player2", true));
+        players.add(new Player(Constants.DEFENSES, "Player3", true));
+        players.add(new Player(Constants.DEFENSES, "Player4"));
+
+        players.add(new Player(Constants.MIDFIELDERS, "Player5"));
+        players.add(new Player(Constants.MIDFIELDERS, "Player6"));
+        players.add(new Player(Constants.MIDFIELDERS, "Player7"));
+
+        players.add(new Player(Constants.FORWARDS, "Player8"));
+        players.add(new Player(Constants.FORWARDS, "Player9", true));
+        players.add(new Player(Constants.FORWARDS, "Player10"));
     }
 }

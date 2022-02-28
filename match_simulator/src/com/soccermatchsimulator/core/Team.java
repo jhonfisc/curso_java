@@ -1,13 +1,10 @@
 package com.soccermatchsimulator.core;
 
 public class Team {
-    private static final int FORWARDS_INDEX = 0;
-    private static final int MIDFIELDERS_INDEX = 1;
-    private static final int DEFENSES_INDEX = 2;
     private static final int BAR_ATTACK_INDEX = 1;
     private static final int BAR_DEFENSE_INDEX = 0;
-    private static final double PROBABILITY_DEFENSE = 5;
-    private static final double PROBABILITY_ATTACK = 5;
+    public static final double PROBABILITY_DEFENSE = 5;
+    public static final double PROBABILITY_ATTACK = 5;
     private static final int POSITION_DEFENSE = 1;
     private static final int POSITION_ATTACK = 2;
     private static final int POSITION_OTHER = 3;
@@ -18,10 +15,18 @@ public class Team {
 
     public Team(String teamName, int forwards, int midfielders, int defenses) {
         this.teamName = teamName;
-        this.formation[FORWARDS_INDEX] = forwards;
-        this.formation[MIDFIELDERS_INDEX] = midfielders;
-        this.formation[DEFENSES_INDEX] = defenses;
+        this.formation[Constants.FORWARDS] = forwards;
+        this.formation[Constants.MIDFIELDERS] = midfielders;
+        this.formation[Constants.DEFENSES] = defenses;
         this.calculateInternalProbabilityAttack();
+    }
+
+    public double getProbabilityAttack() {
+        return probabilityAttack;
+    }
+
+    public void setProbabilityAttack(double probabilityAttack) {
+        this.probabilityAttack = probabilityAttack;
     }
 
     public void setProbabilityDefense(double oppositionChance) {
@@ -29,7 +34,7 @@ public class Team {
     }
 
     public double getProbabilityDefense() {
-        return this.formation[DEFENSES_INDEX] * this.PROBABILITY_DEFENSE;
+        return this.formation[Constants.DEFENSES] * this.PROBABILITY_DEFENSE;
     }
 
     public void setProbabilityAttack() {
@@ -45,7 +50,15 @@ public class Team {
         return POSITION_OTHER;
     }
 
-    private void calculateInternalProbabilityAttack() {
-        this.probabilityAttack = this.formation[FORWARDS_INDEX] * this.PROBABILITY_ATTACK;
+    protected void calculateInternalProbabilityAttack() {
+        this.probabilityAttack = this.formation[Constants.FORWARDS] * this.PROBABILITY_ATTACK;
     }
+    public int[] getFormation() {
+        return formation;
+    }
+
+    public void setFormation(int[] formation) {
+        this.formation = formation;
+    }
+
 }

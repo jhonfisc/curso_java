@@ -32,6 +32,7 @@ public class ElevatorOddLevelsTest {
         elevatorOddLevels.goUp();
         elevatorOddLevels.goUp();
         elevatorOddLevels.goUp();
+
         receivedLevel = elevatorOddLevels.currentLevel;
         assertEquals(expectedLevel, receivedLevel);
     }
