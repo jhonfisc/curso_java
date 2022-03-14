@@ -21,7 +21,7 @@ public class Main {
         return arreglo;
     }
 
-    public static int[][] insertData(int[][] arreglo) {
+    public static void insertData(int[][] arreglo) {
         for(int i = 0; i < arreglo.length; i += 1) {
             for(int j = 0; j < arreglo[0].length; j += 1) {
                 System.out.println("Digite la posicion " +i + "," + j + ": ");
@@ -29,6 +29,5 @@ public class Main {
                 arreglo[i][j] = data;
             }
         }
-        return arreglo;
     }
 }
