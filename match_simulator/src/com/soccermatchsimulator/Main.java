@@ -10,8 +10,11 @@ public class Main {
         ArrayList<Player> players = new ArrayList();
         initTeam(players);
 
-	    Teamv2 teamHome = new Teamv2("Home",3,4,3);
-        Teamv2 teamAway = new Teamv2("Away", players);
+        ArrayList<Player> players2 = new ArrayList();
+        initTeam(players2);
+
+	    Teamv2 teamHome = new Teamv2("Home", players);
+        Teamv2 teamAway = new Teamv2("Away", players2);
 
         Match match = new Match(teamHome, teamAway);
 
