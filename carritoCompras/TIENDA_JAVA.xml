@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tienda>
+    <nombre>Tienda Java</nombre>
+    <items>
+        <item id="1">
+            <nombreItem>Camisa</nombreItem>
+            <precio>50000</precio>
+        </item>
+        <item id="2">
+            <nombreItem>Pantalón</nombreItem>
+            <precio>100000</precio>
+        </item>
+        <item id="3">
+            <nombreItem>Chaqueta</nombreItem>
+            <precio>200000</precio>
+        </item>
+        <item id="4">
+            <nombreItem>Cinturón</nombreItem>
+            <precio>40000</precio>
+        </item>
+        <item id="5">
+            <nombreItem>Calcetines</nombreItem>
+            <precio>20000</precio>
+        </item>
+    </items>
+    <descuentos>
+        <descuento id="1" min="0" max="100000">
+            <porcentaje>5</porcentaje>
+        </descuento>
+        <descuento id="2" min="100000" max="300000">
+            <porcentaje>10</porcentaje>
+        </descuento>
+        <descuento id="3" min="300000" max="500000">
+            <porcentaje>20</porcentaje>
+        </descuento>
+        <descuento id="4" min="500000">
+            <porcentaje>30</porcentaje>
+        </descuento>
+    </descuentos>
+</tienda>
